@@ -16,6 +16,8 @@
 	<version>1.0.0-SNAPSHOT</version>
 
 	<properties>
+                <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
                 <!-- Project Dependecies Versions -->
                 <greeting.api.version>${project.version}</greeting.api.version>
                 <greeting.impl.version>${project.version}</greeting.impl.version>
@@ -296,15 +298,6 @@
 							</goals>
 						</execution>
 					</executions>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-jar-plugin</artifactId>
-					<configuration>
-						<archive>
-							<manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
-						</archive>
-					</configuration>
 				</plugin>
 			</plugins>
 		</pluginManagement>
