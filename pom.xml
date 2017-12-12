@@ -16,6 +16,11 @@
 	<version>1.0.0-SNAPSHOT</version>
 
 	<properties>
+                <!-- Project Dependecies Versions -->
+                <greeting.api.version>${project.version}</greeting.api.version>
+                <greeting.impl.version>${project.version}</greeting.impl.version>
+                <greeting.client.version>${project.version}</greeting.client.version>
+
 		<!-- Maven Plugins Versions -->
 		<maven.compiler.plugin.version>3.6.1</maven.compiler.plugin.version>
 		<maven.source.plugin.version>3.0.1</maven.source.plugin.version>
@@ -62,17 +67,17 @@
 			<dependency>
 				<groupId>${project.groupId}</groupId>
 				<artifactId>playground-greeting-api</artifactId>
-				<version>${project.version}</version>
+				<version>${greeting.api.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>${project.groupId}</groupId>
 				<artifactId>playground-greeting-impl</artifactId>
-				<version>${project.version}</version>
+				<version>${greeting.impl.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>${project.groupId}</groupId>
 				<artifactId>playground-greeting-client</artifactId>
-				<version>${project.version}</version>
+				<version>${greeting.client.version}</version>
 			</dependency>
 			<!-- JUnit is added as default unit testing framework -->
 			<dependency>
