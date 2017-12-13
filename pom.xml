@@ -19,9 +19,9 @@
                 <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
                 <!-- Project Dependecies Versions -->
-                <greeting.api.version>${project.version}</greeting.api.version>
-                <greeting.impl.version>${project.version}</greeting.impl.version>
-                <greeting.client.version>${project.version}</greeting.client.version>
+                <greeting.api.version>${project.parent.version}</greeting.api.version>
+                <greeting.impl.version>${project.parent.version}</greeting.impl.version>
+                <greeting.client.version>${project.parent.version}</greeting.client.version>
 
 		<!-- Maven Plugins Versions -->
 		<maven.compiler.plugin.version>3.6.1</maven.compiler.plugin.version>
@@ -75,11 +75,13 @@
 				<groupId>${project.groupId}</groupId>
 				<artifactId>playground-greeting-impl</artifactId>
 				<version>${greeting.impl.version}</version>
+                                <scope>runtime</scope>
 			</dependency>
 			<dependency>
 				<groupId>${project.groupId}</groupId>
 				<artifactId>playground-greeting-client</artifactId>
 				<version>${greeting.client.version}</version>
+                                <scope>runtime</scope>
 			</dependency>
 			<!-- JUnit is added as default unit testing framework -->
 			<dependency>
@@ -216,6 +218,11 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-jar-plugin</artifactId>
 					<version>${maven.jar.plugin.version}</version>
+					<configuration>
+						<archive>
+							<manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+						</archive>
+					</configuration>
 				</plugin>
 				<!-- The Maven Help plugin provides goals aimed at helping to make sense 
 					out of the build environment -->
